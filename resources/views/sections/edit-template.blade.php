@@ -114,7 +114,7 @@
                             @env('local')
                             <p class="text-primary edit-template" style="cursor:pointer;"><i class="fas fa-trash"></i> Edit Details</p>
                             <p class="text-danger delete-template" style="cursor:pointer;"><i class="fas fa-trash "></i> Delete Template</p>
-                            @end
+                            @endenv
                         </div>
                     </div>
                 </div>
