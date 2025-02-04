@@ -12,3 +12,4 @@ resources/views/draft/*
 !resources/views/templates/.gitkeep
 
 docs/node_modules
+.idea

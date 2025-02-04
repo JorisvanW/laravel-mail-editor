@@ -1,5 +1,5 @@
 {
-    "name": "qoraiche/laravel-mail-editor",
+    "name": "jorisvanw/laravel-mail-editor",
     "description": "Laravel Mailable Editor",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "homepage": "https://github.com/qoraiche"
         }
     ],
-    "homepage": "https://github.com/Qoraiche/laravel-mail-editor",
+    "homepage": "https://github.com/JorisvanW/laravel-mail-editor",
     "keywords": [
         "Laravel",
         "mailEclipse",
@@ -20,6 +20,7 @@
         "markdown"
     ],
     "require": {
+        "fzaninotto/faker": "^1.5",
         "illuminate/support": "^9.0|^10.0",
         "reecem/mocker": "^1.1",
         "laravel/legacy-factories": "^1.3"

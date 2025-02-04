@@ -813,10 +813,23 @@ class MailEclipse
 
         if ($type === 'call') {
             if (self::handleMailableViewDataArgs($instance) !== null) {
+                $mailableInstance = self::handleMailableViewDataArgs($instance);
+
+                if (method_exists($instance, 'supportsEclips') && $method === 'build') {
+                    return $mailableInstance->build();
+                }
+
+                if (method_exists($instance, 'supportsEclips') && $method === 'content') {
+                    $class = new $instance;
+                    $class->view(app()->call([new $instance, 'content'])->view);
+
+                    return $class;
+                }
+
                 return self::handleMailableViewDataArgs($instance);
             }
 
-            if ($method == 'content') {
+            if ($method === 'content') {
                 /** @var \Illuminate\Mail\Mailable */
                 $class = new $instance;
                 $class->view(app()->call([new $instance, 'content'])->view);
