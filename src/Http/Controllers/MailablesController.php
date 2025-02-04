@@ -29,8 +29,8 @@ class MailablesController extends Controller
 
         $mailables = (null !== $mailables) ? $mailables->sortBy('name') : collect([]);
 
-        $mailables->reject(function ($mailable) {
-            return method_exists($mailable, 'supportsEclips');
+        $mailables = $mailables->reject(function ($mailable) {
+            return !method_exists($mailable['data'], 'supportsEclips');
         });
 
         return view(MailEclipse::VIEW_NAMESPACE.'::sections.mailables', compact('mailables'));
