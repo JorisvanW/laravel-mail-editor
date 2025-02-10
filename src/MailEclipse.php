@@ -1113,6 +1113,10 @@ class MailEclipse
 
         $mailableInstance = self::setMailableSendTestRecipient($mailableInstance, $recipient);
 
+        if (method_exists($mailableInstance, 'getEclipseSubject')) {
+            $mailableInstance->subject($mailableInstance->getEclipseSubject());
+        }
+
         Mail::send($mailableInstance);
     }
 
